@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ message + count }}
+  </div>
+
+  <div id="app2">
+    <a v-bind:href="url" target="_blank">click me</a>
+  </div>
+
+  <div id="app3">
+    <ol>
+      <li v-for="item in list">
+        {{ item.label }}
+      </li>
+    </ol>
+  </div>
+
+  <div id="app4">
+    <p>{{ message }}</p>
+    <input v-model="message">
+  </div>
+
+  <div id="app5">
+    <span v-if="seen">now you see me</span>
+  </div>
+
+  <div id="app6">
+    {{ message }}
+    <button v-on:click="reverseMessage">reverse message</button>
+  </div>
+
+  <div id="app7">
+    <ol>
+      <todo-item
+        v-for="item in groceryList"
+        v-bind:todo="item"
+        v-bind:key="item.id"></todo-item>
+    </ol>
+  </div>
+
+  <div id="app8">
+    <input v-model="question">
+    {{ answer }}
+  </div>
+
+  <div id="app9">
+    <div v-bind:class="classObject"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/axios@0.12.0/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.13.1/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script src="index.js"></script>
+</body>
+</html>
