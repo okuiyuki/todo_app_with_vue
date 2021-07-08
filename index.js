@@ -73,7 +73,8 @@ var watchExampleVM = new Vue({
   el: "#app8",
   data: {
     question: "",
-    answer: 'I cannot give you an answer until you ask a question!'
+    answer: 'I cannot give you an answer until you ask a question!',
+    image: "nil"
   },
   watch: {
     question: function (newQuestion, oldQuestion) {
@@ -95,6 +96,7 @@ var watchExampleVM = new Vue({
       axios.get('https://yesno.wtf/api')
       .then(function (response) {
         vm.answer = _.capitalize(response.data.answer)
+        vm.image = response.data.image
       })
       .catch(function (error) {
         vm.answer = "error" + error
