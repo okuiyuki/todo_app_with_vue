@@ -110,7 +110,17 @@ new Vue({
   data: {
     classObject: {
       active: true,
-    'text-danger': false
+      'text-danger': false
     }
   }
 });
+
+new Vue({
+  el: "#app10",
+  data: {
+    styleObject: {
+      color: "red",
+      fontSize: "30px"
+    }
+  }
+})
