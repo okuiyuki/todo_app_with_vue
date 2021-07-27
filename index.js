@@ -124,3 +124,14 @@ new Vue({
     }
   }
 })
+
+Vue.component('click-button', {
+  template: '<button v-on:click="count++">{{ count }}</button>',
+  data: function() {
+    return {
+      count: 0
+    }
+  }
+})
+
+new Vue({ el: "#app11"})
