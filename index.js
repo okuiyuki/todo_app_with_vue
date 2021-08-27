@@ -134,4 +134,25 @@ Vue.component('click-button', {
   }
 })
 
+Vue.component('blog-post',{
+  props:['post'],
+  template: `
+  <div class="blog-post">
+    <h3>{{ post.title }}</h3>
+    <button v-on:click="$emit('enlarge-text')">
+      Enlarge text
+    </button>
+    <div v-html="post.content"></div>
+  </div>
+`
+})
+
+tmp = new Vue({
+  el: '#app12',
+  data: {
+    posts: [{title: 'Vue', content: 'Vue content'}],
+    postFontSize: 1
+  }
+})
+
 new Vue({ el: "#app11"})
